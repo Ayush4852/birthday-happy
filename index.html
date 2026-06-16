@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#E0218A">
+<title>Happy Birthday Akku 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400;1,400;1,700&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Love meter (floating) -->
+<div class="love-meter" id="loveMeter">
+  <div class="lm-label">love-o-meter</div>
+  <div class="lm-track">
+    <div class="lm-fill" id="lmFill"></div>
+    <div class="lm-heart">💖</div>
+  </div>
+  <div class="lm-percent" id="lmPercent">0%</div>
+</div>
+
+<!-- Ambient floating layer -->
+<div class="ambient" id="ambient"></div>
+
+<!-- Parallax background shapes -->
+<div class="parallax-layer" id="parallax">
+  <div class="bg-shape s1">💖</div>
+  <div class="bg-shape s2">🎀</div>
+  <div class="bg-shape s3">✨</div>
+  <div class="bg-shape s4">💝</div>
+  <div class="bg-shape s5">🌸</div>
+  <div class="bg-shape s6">⭐</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-eyebrow">✦ A surprise for you ✦</div>
+  <h1 class="title" id="title">Happy Birthday</h1>
+  <h2 class="name" id="heroName" role="button" tabindex="0">Akanksha</h2>
+
+  <div class="hero-stage">
+    <!-- Barbie doll -->
+    <div class="doll-wrap" id="dollWrap">
+      <svg class="doll" viewBox="0 0 200 380" xmlns="http://www.w3.org/2000/svg" aria-label="Barbie">
+        <defs>
+          <linearGradient id="dressGrad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#FF69B4"/>
+            <stop offset="1" stop-color="#E0218A"/>
+          </linearGradient>
+          <linearGradient id="skirtGrad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#FFB6D9"/>
+            <stop offset="1" stop-color="#FF1493"/>
+          </linearGradient>
+          <radialGradient id="cheekGrad" cx="50%" cy="50%">
+            <stop offset="0" stop-color="#FF8FA3" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#FF8FA3" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Stand/shadow -->
+        <ellipse cx="100" cy="370" rx="60" ry="6" fill="#000" opacity=".15"/>
+
+        <!-- Legs -->
+        <rect x="86" y="280" width="9" height="80" rx="4" fill="#E8B89C"/>
+        <rect x="105" y="280" width="9" height="80" rx="4" fill="#E8B89C"/>
+        <!-- Shoes -->
+        <ellipse cx="90" cy="365" rx="9" ry="5" fill="#E0218A"/>
+        <ellipse cx="110" cy="365" rx="9" ry="5" fill="#E0218A"/>
+
+        <!-- Skirt (flared) -->
+        <path d="M 65 230 Q 100 320 135 230 L 135 245 Q 100 330 65 245 Z" fill="url(#skirtGrad)"/>
+        <path d="M 60 240 Q 100 310 140 240 L 140 285 Q 100 320 60 285 Z" fill="url(#skirtGrad)" opacity=".9"/>
+        <!-- Skirt sparkles -->
+        <circle cx="80" cy="265" r="1.5" fill="#fff"/>
+        <circle cx="100" cy="280" r="1.5" fill="#fff"/>
+        <circle cx="120" cy="265" r="1.5" fill="#fff"/>
+        <circle cx="90" cy="295" r="1" fill="#FFD700"/>
+        <circle cx="115" cy="290" r="1" fill="#FFD700"/>
+
+        <!-- Top/bodice -->
+        <path d="M 75 180 Q 100 175 125 180 L 130 240 Q 100 245 70 240 Z" fill="url(#dressGrad)"/>
+        <!-- Bodice heart detail -->
+        <path d="M 95 200 Q 90 195 88 200 Q 88 207 100 215 Q 112 207 112 200 Q 110 195 105 200 Q 102 197 100 200 Z" fill="#FFD700"/>
+
+        <!-- Arms -->
+        <!-- Left arm down -->
+        <path d="M 75 185 Q 65 220 60 250 Q 58 260 64 260 Q 70 230 80 200 Z" fill="#E8B89C"/>
+        <!-- Right arm raised (waving) -->
+        <g class="wave-arm">
+          <path d="M 125 185 Q 145 165 160 130 Q 165 122 158 118 Q 145 145 122 175 Z" fill="#E8B89C"/>
+          <!-- Hand -->
+          <ellipse cx="160" cy="120" rx="8" ry="9" fill="#E8B89C"/>
+        </g>
+
+        <!-- Neck -->
+        <rect x="92" y="160" width="16" height="22" fill="#E8B89C"/>
+
+        <!-- Hair (back, behind head) -->
+        <path d="M 55 110 Q 50 200 75 240 Q 80 245 85 240 Q 70 180 70 130 Z" fill="#2B1810"/>
+        <path d="M 145 110 Q 150 200 125 240 Q 120 245 115 240 Q 130 180 130 130 Z" fill="#2B1810"/>
+
+        <!-- Head -->
+        <ellipse cx="100" cy="125" rx="38" ry="42" fill="#E8B89C"/>
+
+        <!-- Hair (top) -->
+        <path d="M 62 105 Q 60 75 100 65 Q 140 75 138 105 Q 135 90 100 85 Q 65 90 62 105 Z" fill="#2B1810"/>
+        <!-- Hair side bangs -->
+        <path d="M 65 100 Q 80 110 78 130 Q 72 125 65 115 Z" fill="#2B1810"/>
+        <path d="M 135 100 Q 120 110 122 130 Q 128 125 135 115 Z" fill="#2B1810"/>
+
+        <!-- Crown -->
+        <g class="crown-bob">
+          <path d="M 75 70 L 80 82 L 90 65 L 100 80 L 110 65 L 120 82 L 125 70 L 122 88 L 78 88 Z" fill="#F5C518" stroke="#C79C0D" stroke-width="1"/>
+          <circle cx="90" cy="76" r="2" fill="#E0218A"/>
+          <circle cx="100" cy="74" r="2.5" fill="#FF1493"/>
+          <circle cx="110" cy="76" r="2" fill="#E0218A"/>
+        </g>
+
+        <!-- Cheeks -->
+        <ellipse cx="78" cy="138" rx="7" ry="5" fill="url(#cheekGrad)"/>
+        <ellipse cx="122" cy="138" rx="7" ry="5" fill="url(#cheekGrad)"/>
+
+        <!-- Eyes -->
+        <g class="eyes" id="dollEyes">
+          <!-- Lashes (top) -->
+          <path d="M 80 122 Q 88 118 96 122" stroke="#2B1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M 104 122 Q 112 118 120 122" stroke="#2B1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <!-- Eye whites -->
+          <ellipse cx="88" cy="128" rx="5" ry="6" fill="#fff"/>
+          <ellipse cx="112" cy="128" rx="5" ry="6" fill="#fff"/>
+          <!-- Iris -->
+          <ellipse cx="88" cy="129" rx="3.5" ry="4.5" fill="#5D3A1E"/>
+          <ellipse cx="112" cy="129" rx="3.5" ry="4.5" fill="#5D3A1E"/>
+          <!-- Pupil -->
+          <circle cx="88" cy="130" r="1.8" fill="#000"/>
+          <circle cx="112" cy="130" r="1.8" fill="#000"/>
+          <!-- Sparkle -->
+          <circle cx="89.5" cy="128" r="1.2" fill="#fff"/>
+          <circle cx="113.5" cy="128" r="1.2" fill="#fff"/>
+          <!-- Lashes (bottom hint) -->
+          <path d="M 84 134 L 82 137 M 88 135 L 88 138 M 92 134 L 94 137" stroke="#2B1810" stroke-width="1" stroke-linecap="round"/>
+          <path d="M 108 134 L 106 137 M 112 135 L 112 138 M 116 134 L 118 137" stroke="#2B1810" stroke-width="1" stroke-linecap="round"/>
+        </g>
+
+        <!-- Lips -->
+        <path d="M 92 148 Q 100 155 108 148 Q 100 152 92 148 Z" fill="#E0218A"/>
+        <path d="M 94 148 Q 100 144 106 148 Q 100 146 94 148 Z" fill="#FF69B4"/>
+
+        <!-- Earrings -->
+        <circle cx="64" cy="135" r="2.5" fill="#F5C518"/>
+        <circle cx="136" cy="135" r="2.5" fill="#F5C518"/>
+
+        <!-- Sparkle wand in raised hand -->
+        <g class="wand-spin">
+          <line x1="160" y1="120" x2="175" y2="95" stroke="#F5C518" stroke-width="2.5"/>
+          <path d="M 180 75 L 184 87 L 196 90 L 186 96 L 188 108 L 180 100 L 172 108 L 174 96 L 164 90 L 176 87 Z" fill="#F5C518" stroke="#C79C0D" stroke-width="1"/>
+        </g>
+
+        <!-- Sparkles around -->
+        <g class="doll-sparkles">
+          <circle cx="30" cy="100" r="2" fill="#fff"/>
+          <circle cx="170" cy="200" r="2" fill="#fff"/>
+          <circle cx="40" cy="240" r="2" fill="#FFD700"/>
+          <circle cx="175" cy="300" r="2" fill="#fff"/>
+          <text x="20" y="180" font-size="14" fill="#fff">✦</text>
+          <text x="175" y="260" font-size="12" fill="#FFD700">✦</text>
+          <text x="25" y="320" font-size="10" fill="#fff">✦</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Hero photo -->
+    <div class="hero-photo">
+      <div class="crown">👑</div>
+      <div class="frame"></div>
+      <img src="photos/couple.jpg" alt="Us">
+    </div>
+  </div>
+
+  <p class="hero-sub">akku • my baby • my barbie • my world ♡</p>
+  <div class="scroll-hint">scroll down ↓</div>
+</section>
+
+<div class="divider"><span>♡</span></div>
+
+<!-- ===== BALLOONS POP ===== -->
+<section class="balloons-section reveal">
+  <div class="section-eyebrow">pop pop pop</div>
+  <h2 class="section-title">Catch the balloons 🎈</h2>
+  <div class="card">
+    <p class="cake-instruction">Tap the floating balloons — each one has a little something for you ✨</p>
+    <div class="balloon-stage" id="balloonStage"></div>
+    <p class="balloon-score" id="balloonScore">0 popped — keep going, akku!</p>
+  </div>
+</section>
+
+<div class="divider"><span>✦</span></div>
+
+<!-- ===== LETTER ===== -->
+<section class="letter-section reveal">
+  <div class="section-eyebrow">a letter for you</div>
+  <h2 class="section-title">From my heart, to yours</h2>
+  <div class="card">
+    <div class="letter-body">
+      <p>My dearest Akku, my baby 💕</p>
+      <p>Today the whole world is a little brighter because it's <em>your</em> day. The day someone as soft, kind and beautiful as you came into the world — and lucky me, into my life.</p>
+      <p>Every smile of yours is a gift I unwrap every day. Every laugh of yours is my favorite song. And every moment I spend with you, baby, feels like a birthday for my heart. 🎀</p>
+      <p>I wish you a year full of pink skies, lazy mornings, late-night calls, your favorite cake, and all the love your little heart can hold. And I promise to be there for every single bit of it.</p>
+      <div class="heart-divider">♡ ♡ ♡</div>
+      <p>Happy Birthday, my Barbie girl. You deserve the whole world, Akku — and I'll spend my life trying to give it to you.</p>
+      <p class="signoff">— Yours always,<br>Ayush 💌</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>🎀</span></div>
+
+<!-- ===== GIFT BOX ===== -->
+<section class="gift-section reveal">
+  <div class="section-eyebrow">a surprise inside</div>
+  <h2 class="section-title">Open your gift, baby 🎁</h2>
+  <div class="card">
+    <div class="gift-wrap">
+      <div class="gift-box" id="giftBox" role="button" tabindex="0" aria-label="Open the gift">
+        <div class="gift-base"></div>
+        <div class="gift-lid"></div>
+        <div class="gift-bow">🎀</div>
+      </div>
+      <p class="gift-hint" id="giftHint">tap to open ↑</p>
+      <div class="gift-reveal" id="giftReveal">
+        Akku, if I could wrap a feeling and give it to you, this would be the gift —<br><br>
+        <strong>the way my whole heart lights up</strong> the second I see your name on my phone. The way you've made me a softer, kinder, sillier, happier version of myself.<br><br>
+        You are my favorite person in the world, baby. 🎀<br>
+        <strong>Happy Birthday, Akku.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>✿</span></div>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery reveal">
+  <div class="section-eyebrow">our little album</div>
+  <h2 class="section-title">My favorite views ✿</h2>
+  <p class="hint-small">swipe sideways · tap to enlarge · tilt to play</p>
+  <div class="gallery-track" id="gallery">
+    <div class="photo-card">
+      <span class="sticker tl">💕</span>
+      <span class="sticker tr">✨</span>
+      <img src="photos/couple.jpg" alt="us">
+      <div class="tag">us, my favorite team</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">🦋</span>
+      <img src="photos/bluedress.jpg" alt="">
+      <div class="tag">prettiest in blue</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">🎀</span>
+      <span class="sticker tr">🎂</span>
+      <img src="photos/sash.jpg" alt="">
+      <div class="tag">birthday girl forever</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">🌟</span>
+      <img src="photos/cake.jpg" alt="">
+      <div class="tag">make a wish for me too</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">🌸</span>
+      <span class="sticker tr">💗</span>
+      <img src="photos/flowers.jpg" alt="">
+      <div class="tag">flowers — but you outshine them</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">😊</span>
+      <img src="photos/smile.jpg" alt="">
+      <div class="tag">that smile = my whole day</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">🪔</span>
+      <span class="sticker tr">✨</span>
+      <img src="photos/diya.jpg" alt="">
+      <div class="tag">you, glowing as always</div>
+    </div>
+    <div class="photo-card">
+      <span class="sticker tl">💖</span>
+      <img src="photos/mirror.jpg" alt="">
+      <div class="tag">the mirror knows it too</div>
+    </div>
+  </div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<div class="divider"><span>♡</span></div>
+
+<!-- ===== CAKE ===== -->
+<section class="cake-section reveal">
+  <div class="section-eyebrow">your birthday cake</div>
+  <h2 class="section-title">Blow the candles ✿</h2>
+  <div class="card">
+    <p class="cake-instruction">Tap each candle to blow it out, and a little wish from me will appear ♡</p>
+    <p class="cake-counter" id="counter">0 / 7 candles blown</p>
+    <div class="cake-stage" id="cakeStage">
+      <svg class="cake-svg" viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="170" cy="295" rx="155" ry="12" fill="#fff" opacity=".4"/>
+        <ellipse cx="170" cy="290" rx="150" ry="10" fill="#fff"/>
+        <rect x="40" y="200" width="260" height="85" rx="6" fill="url(#tier1)"/>
+        <path d="M 40 210 Q 50 240 60 210 Q 70 235 80 215 Q 95 245 110 215 Q 125 240 140 215 Q 155 245 170 215 Q 185 240 200 215 Q 215 245 230 215 Q 245 240 260 215 Q 275 245 290 215 Q 295 230 300 210 L 300 200 L 40 200 Z" fill="#E0218A"/>
+        <text x="80" y="260" font-size="18" fill="#fff">♡</text>
+        <text x="130" y="265" font-size="14" fill="#FFD700">✦</text>
+        <text x="180" y="260" font-size="18" fill="#fff">♡</text>
+        <text x="230" y="265" font-size="14" fill="#FFD700">✦</text>
+        <text x="270" y="260" font-size="18" fill="#fff">♡</text>
+        <rect x="80" y="130" width="180" height="75" rx="6" fill="url(#tier2)"/>
+        <path d="M 80 140 Q 90 170 100 140 Q 115 168 130 145 Q 145 170 160 145 Q 175 168 190 145 Q 205 170 220 145 Q 235 168 250 142 Q 255 160 260 138 L 260 130 L 80 130 Z" fill="#FFB6D9"/>
+        <text x="115" y="185" font-size="16" fill="#E0218A">♡</text>
+        <text x="158" y="188" font-size="20" fill="#E0218A">♡</text>
+        <text x="200" y="185" font-size="16" fill="#E0218A">♡</text>
+        <text x="170" y="125" font-size="22" text-anchor="middle">👑</text>
+        <g class="candle-group" data-i="0">
+          <rect x="55" y="160" width="8" height="36" fill="#FF1493" rx="1"/>
+          <rect x="55" y="160" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="58" y="155" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="59" cy="148" rx="5" ry="9" fill="#FFA500"/><ellipse cx="59" cy="150" rx="3" ry="6" fill="#FFD700"/><ellipse cx="59" cy="152" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="1">
+          <rect x="95" y="150" width="8" height="46" fill="#FFD700" rx="1"/>
+          <rect x="95" y="150" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="98" y="145" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="99" cy="138" rx="5" ry="9" fill="#FFA500"/><ellipse cx="99" cy="140" rx="3" ry="6" fill="#FFD700"/><ellipse cx="99" cy="142" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="2">
+          <rect x="135" y="142" width="8" height="54" fill="#FF1493" rx="1"/>
+          <rect x="135" y="142" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="138" y="137" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="139" cy="130" rx="5" ry="9" fill="#FFA500"/><ellipse cx="139" cy="132" rx="3" ry="6" fill="#FFD700"/><ellipse cx="139" cy="134" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="3">
+          <rect x="166" y="135" width="8" height="61" fill="#FFD700" rx="1"/>
+          <rect x="166" y="135" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="169" y="130" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="170" cy="123" rx="5" ry="10" fill="#FFA500"/><ellipse cx="170" cy="125" rx="3" ry="7" fill="#FFD700"/><ellipse cx="170" cy="127" rx="1.5" ry="3.5" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="4">
+          <rect x="197" y="142" width="8" height="54" fill="#FF1493" rx="1"/>
+          <rect x="197" y="142" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="200" y="137" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="201" cy="130" rx="5" ry="9" fill="#FFA500"/><ellipse cx="201" cy="132" rx="3" ry="6" fill="#FFD700"/><ellipse cx="201" cy="134" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="5">
+          <rect x="237" y="150" width="8" height="46" fill="#FFD700" rx="1"/>
+          <rect x="237" y="150" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="240" y="145" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="241" cy="138" rx="5" ry="9" fill="#FFA500"/><ellipse cx="241" cy="140" rx="3" ry="6" fill="#FFD700"/><ellipse cx="241" cy="142" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <g class="candle-group" data-i="6">
+          <rect x="277" y="160" width="8" height="36" fill="#FF1493" rx="1"/>
+          <rect x="277" y="160" width="8" height="4" fill="#fff" opacity=".4"/>
+          <rect x="280" y="155" width="2" height="6" fill="#333"/>
+          <g class="flame"><ellipse cx="281" cy="148" rx="5" ry="9" fill="#FFA500"/><ellipse cx="281" cy="150" rx="3" ry="6" fill="#FFD700"/><ellipse cx="281" cy="152" rx="1.5" ry="3" fill="#fff"/></g>
+        </g>
+        <defs>
+          <linearGradient id="tier1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FF8FC4"/><stop offset="1" stop-color="#E0218A"/></linearGradient>
+          <linearGradient id="tier2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFD6EC"/><stop offset="1" stop-color="#FF8FC4"/></linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="wish-message" id="wishMsg">
+      <span class="small">✨ your wish is sealed ✨</span>
+      May every dream in your beautiful heart come true this year, baby.<br>I'm here for every single one of them. 🎀<br><br>
+      <span style="font-family:'Quicksand',sans-serif;font-size:.85rem;color:var(--barbie);letter-spacing:.05em">— always yours, Ayush</span>
+    </div>
+    <button class="melody-btn" id="melodyBtn">
+      <span class="note-icon">🎵</span>
+      <span>Play Happy Birthday</span>
+    </button>
+  </div>
+</section>
+
+<div class="divider"><span>✦</span></div>
+
+<!-- ===== WISHES JAR ===== -->
+<section class="wishes-section reveal">
+  <div class="section-eyebrow">wishes for you</div>
+  <h2 class="section-title">Pick a wish, akku 🫙</h2>
+  <div class="card">
+    <p class="cake-instruction">Tap the jar to pull out a folded wish — one new one every time ✨</p>
+    <div class="jar-stage">
+      <svg class="jar-svg" id="jarSvg" viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="jarBody" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="rgba(255,255,255,.7)"/>
+            <stop offset=".5" stop-color="rgba(255,255,255,.4)"/>
+            <stop offset="1" stop-color="rgba(255,255,255,.7)"/>
+          </linearGradient>
+        </defs>
+        <!-- Jar body -->
+        <path d="M 50 80 Q 50 70 60 70 L 140 70 Q 150 70 150 80 L 155 220 Q 155 230 145 230 L 55 230 Q 45 230 45 220 Z" fill="url(#jarBody)" stroke="#fff" stroke-width="2"/>
+        <!-- Jar shine -->
+        <path d="M 60 90 L 65 215" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+        <!-- Lid -->
+        <rect x="42" y="55" width="116" height="22" rx="3" fill="#E0218A"/>
+        <rect x="42" y="55" width="116" height="6" fill="#FF69B4"/>
+        <!-- Ribbon on lid -->
+        <text x="100" y="72" font-size="18" text-anchor="middle">🎀</text>
+        <!-- Folded notes inside -->
+        <g class="jar-notes">
+          <rect x="65" y="170" width="20" height="14" rx="2" fill="#FFE5F1" transform="rotate(-8 75 177)"/>
+          <rect x="90" y="180" width="20" height="14" rx="2" fill="#FFD6EC" transform="rotate(5 100 187)"/>
+          <rect x="115" y="172" width="20" height="14" rx="2" fill="#FFE5F1" transform="rotate(-3 125 179)"/>
+          <rect x="75" y="195" width="20" height="14" rx="2" fill="#fff" transform="rotate(8 85 202)"/>
+          <rect x="105" y="200" width="20" height="14" rx="2" fill="#FFD6EC" transform="rotate(-5 115 207)"/>
+          <text x="75" y="180" font-size="8" text-anchor="middle" fill="#E0218A">♡</text>
+          <text x="100" y="190" font-size="8" text-anchor="middle" fill="#E0218A">♡</text>
+          <text x="125" y="182" font-size="8" text-anchor="middle" fill="#E0218A">♡</text>
+        </g>
+        <!-- Label -->
+        <rect x="65" y="105" width="70" height="40" rx="3" fill="#fff" stroke="#E0218A" stroke-width="1"/>
+        <text x="100" y="122" font-size="9" text-anchor="middle" font-family="Quicksand, sans-serif" font-weight="700" fill="#E0218A">FOR AKKU</text>
+        <text x="100" y="135" font-size="7" text-anchor="middle" font-family="Quicksand, sans-serif" fill="#A8186B">100 wishes inside</text>
+      </svg>
+      <p class="jar-hint">tap the jar ↑</p>
+    </div>
+    <div class="wish-card" id="wishCard">
+      <div class="wish-card-inner">
+        <div class="wish-tag">wish #<span id="wishNum">0</span></div>
+        <p class="wish-text" id="wishText"></p>
+        <button class="wish-again-btn" id="wishAgainBtn">draw another ↻</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>♡</span></div>
+
+<!-- ===== REASONS ===== -->
+<section class="reasons-section reveal">
+  <div class="section-eyebrow">why i love you</div>
+  <h2 class="section-title">Tap to reveal ♡</h2>
+  <div class="card">
+    <div class="reasons-grid">
+      <button class="reason"><div class="front"><div class="num">01</div><div class="label">tap me</div></div><div class="back">your smile lights up every room ✨</div></button>
+      <button class="reason"><div class="front"><div class="num">02</div><div class="label">tap me</div></div><div class="back">your laugh is my favorite sound 🎀</div></button>
+      <button class="reason"><div class="front"><div class="num">03</div><div class="label">tap me</div></div><div class="back">your heart is the softest I've known 💗</div></button>
+      <button class="reason"><div class="front"><div class="num">04</div><div class="label">tap me</div></div><div class="back">you make ordinary days magical ✨</div></button>
+      <button class="reason"><div class="front"><div class="num">05</div><div class="label">tap me</div></div><div class="back">how patient you are with me 💕</div></button>
+      <button class="reason"><div class="front"><div class="num">06</div><div class="label">tap me</div></div><div class="back">your eyes — forever lost in them 👀</div></button>
+      <button class="reason"><div class="front"><div class="num">07</div><div class="label">tap me</div></div><div class="back">the way you care so deeply 🌸</div></button>
+      <button class="reason"><div class="front"><div class="num">08</div><div class="label">tap me</div></div><div class="back">just being you. that's enough. 🎀</div></button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>💋</span></div>
+
+<!-- ===== KISS ===== -->
+<section class="kiss-section reveal">
+  <div class="card kiss-card">
+    <h2 class="section-title" style="margin-bottom:8px">Send yourself a kiss</h2>
+    <p class="cake-instruction" style="margin-bottom:14px">from me, with all my love</p>
+    <button class="kiss-btn" id="kissBtn">💋 send me a kiss</button>
+  </div>
+</section>
+
+<!-- ===== FINAL ===== -->
+<section class="final reveal">
+  <h2 class="final-title">I love you,<br>my Akku 💖</h2>
+  <p class="final-sub">today, tomorrow, and every day after.</p>
+  <p class="signature">— yours forever,<br>Ayush ♡</p>
+</section>
+
+<!-- Photo lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <img id="lbImg" src="" alt="">
+  <p class="lb-caption" id="lbCaption"></p>
+</div>
+
+<!-- Easter egg banner -->
+<div class="easter-banner" id="easterBanner">🎉 you found a secret, akku! 🎉<br><span style="font-size:1rem;font-family:Quicksand;font-weight:600">i hid it just for you 💗</span></div>
+
+<!-- Floating action button -->
+<button class="btn-celebrate" id="celebrate" aria-label="Celebrate again">🎉</button>
+
+<script src="script.js"></script>
+</body>
+</html>
